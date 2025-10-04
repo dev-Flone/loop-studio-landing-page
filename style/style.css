@@ -1,0 +1,408 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,300;1,300&display=swap");
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-grey: hsl(0, 0%, 85%);
+  --color-dark-grey: hsl(0, 0%, 41%);
+  --font-heading: "Josefin Sans", sans-serif;
+  --font-primary: "Alata", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: var(--font-primary);
+  color: var(--color-white);
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.hamburger {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
+  display: none;
+}
+
+.close {
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+  display: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.link {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 2rem;
+}
+.link a {
+  position: relative;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
+.link a::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  background-color: var(--color-white);
+}
+.link a:hover::after {
+  transform: scaleX(1);
+}
+
+.desktop-interactive {
+  display: none;
+}
+
+/* Start Styling */
+.container__header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  z-index: 999;
+}
+.container__header__logo {
+  z-index: 1;
+}
+.container__header__nav {
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+  background-color: var(--color-black);
+  position: absolute;
+  gap: 2rem;
+  top: 0;
+  left: 0;
+  padding-left: 2rem;
+  width: 100%;
+  height: 100vh;
+}
+.container__header .active {
+  transform: translateX(0);
+}
+.container__header__menu {
+  cursor: pointer;
+}
+.container__header__menu .active {
+  display: block;
+}
+
+/* Hero */
+.container__hero {
+  background-image: url(../images/mobile/image-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80vh;
+  margin-bottom: 6rem;
+}
+.container__hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(1, 1, 3, 0.5);
+}
+
+.container__hero h1 {
+  width: 100%;
+  max-width: 30rem;
+  margin: 2rem;
+  padding: 1.5rem;
+  line-height: 1;
+  border: 2px solid var(--color-white);
+  font-size: 2.5rem;
+  z-index: 1;
+}
+
+/* Interactive */
+.container__interactive {
+  margin: 0 2rem;
+  text-align: center;
+}
+
+.container__interactive__image {
+  width: 100%;
+}
+
+.container__interactive__image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container__interactive__content {
+  padding: 2.5rem 2rem;
+}
+.container__interactive__content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-black);
+}
+.container__interactive__content p {
+  color: var(--color-dark-grey);
+  line-height: 1.7;
+}
+
+/* Creations */
+.desktop {
+  display: none;
+}
+
+.mobile {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container__creations {
+  gap: 3rem;
+  margin: 4rem 0;
+}
+.container__creations h2 {
+  color: var(--color-black);
+  font-size: 2rem;
+}
+
+.container__creations__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.5rem;
+}
+.container__creations__grid__item {
+  position: relative;
+}
+.container__creations__grid__item img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container__creations__grid__item h3 {
+  position: absolute;
+  bottom: 0;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  width: 12rem;
+}
+.container__creations__grid__item:hover {
+  opacity: 0.5;
+}
+.container__creations__grid__item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgb(1, 1, 3), rgba(255, 255, 255, 0));
+}
+
+.container__creations__btn {
+  cursor: pointer;
+}
+.container__creations__btn h3 {
+  padding: 1rem 3rem;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  width: -moz-max-content;
+  width: max-content;
+}
+.container__creations__btn:hover {
+  background-color: black;
+}
+.container__creations__btn:hover h3 {
+  color: var(--color-white);
+}
+
+/* Footer */
+.container__footer {
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+  padding: 4rem 3rem;
+}
+.container__footer .link {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.container__footer .link a {
+  text-transform: none;
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  color: var(--color-grey);
+}
+.container__footer__top--logo {
+  margin-bottom: 2rem;
+}
+.container__footer__bottom--social {
+  margin-bottom: 1rem;
+}
+.container__footer__bottom--social img {
+  margin: 0 0.5rem;
+}
+.container__footer__bottom--copyrights {
+  color: var(--color-dark-grey);
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .container__hero {
+    background-image: url(../images/desktop/image-hero.jpg);
+    height: 100vh;
+    margin-bottom: 8rem;
+  }
+  .container__hero h1 {
+    max-width: 40rem;
+    font-size: 3rem;
+  }
+  .container__interactive {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
+  }
+  .container__interactive__image {
+    flex: 1;
+  }
+  .container__interactive__content {
+    flex: 1;
+    padding: 0;
+  }
+  .container__creations__grid {
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+}
+/* Large Tablet / Small Desktop */
+@media (min-width: 900px) {
+  .container__header {
+    padding: 4rem 6rem;
+  }
+  .container__header__menu {
+    display: none;
+  }
+  .container__header__nav {
+    transform: translateX(0);
+    background-color: transparent;
+    position: static;
+    top: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+  }
+  .container__header__nav--link {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .container__header__nav--link a {
+    font-size: 1rem;
+  }
+  .container__hero h1 {
+    margin: 0 6rem;
+  }
+  .container__interactive {
+    position: relative;
+    margin: 0rem 6rem;
+  }
+  .container__interactive__image {
+    flex: 3;
+    height: 100%;
+  }
+  .container__interactive__image .mobile-interactive {
+    display: none;
+  }
+  .container__interactive__image .desktop-interactive {
+    display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 70%;
+  }
+  .container__interactive__content {
+    position: absolute;
+    padding: 2rem;
+    right: 0;
+    bottom: 0;
+    width: 35rem;
+    background-color: var(--color-white);
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .desktop div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .desktop .container__creations__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .desktop .container__creations__grid__item--image {
+    width: 100%;
+  }
+  .desktop .container__creations__grid__item--image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+/* Desktop */
+@media (min-width: 1280px) {
+  .container__header {
+    padding: 4rem 8rem;
+  }
+  .container__hero h1 {
+    margin: 0 8rem;
+    font-size: 4rem;
+    max-width: 50rem;
+  }
+  .container__interactive {
+    padding: 0 8rem;
+  }
+  .desktop {
+    padding: 8rem;
+  }
+  .desktop .container__creations__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .desktop .container__creations__grid__item {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */
