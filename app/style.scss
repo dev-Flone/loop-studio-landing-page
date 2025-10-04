@@ -381,6 +381,23 @@ h3 {
       }
     }
   }
+  .container__footer {
+    flex-direction: row;
+    justify-content: space-between;
+    &__top {
+      text-align: left;
+      &--logo {
+        margin-bottom: 0;
+      }
+      .link {
+        flex-direction: row;
+        gap: 2rem;
+      }
+    }
+    &__bottom {
+      text-align: right;
+    }
+  }
 }
 
 /* Desktop */

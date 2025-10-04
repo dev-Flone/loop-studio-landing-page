@@ -381,6 +381,23 @@ h3 {
     -o-object-fit: cover;
        object-fit: cover;
   }
+  .container__footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .container__footer__top {
+    text-align: left;
+  }
+  .container__footer__top--logo {
+    margin-bottom: 0;
+  }
+  .container__footer__top .link {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .container__footer__bottom {
+    text-align: right;
+  }
 }
 /* Desktop */
 @media (min-width: 1280px) {
